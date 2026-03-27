@@ -5,5 +5,6 @@
 2. Написати просту консольну програму (наприклад вивід на екран аргументів командної строки)
 3. Прикріпити посилання на GIT та архівований проект
 ## Знімок екрана результату виконання програми
-<img width="905" height="212" alt="image" src="https://github.com/user-attachments/assets/7ee9096d-9fdc-4dcc-a7ff-4e8a6dbb0df1" />
+<img width="926" height="196" alt="image" src="https://github.com/user-attachments/assets/245f94fb-b58b-4389-8b99-162c51428d3f" />
+
 
