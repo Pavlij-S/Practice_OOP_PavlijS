@@ -17,3 +17,6 @@
 ### ✨ Завдання 2 (24.03.26)
 #### 🔗 [Посилання на проект](https://github.com/Pavlij-S/Practice_OOP_PavlijS/tree/master/src/Task2)
 #### 📝 Порахувати кількість тетрад у двійковому поданні числа.
+### ✨ Завдання 3 (25.03.26)
+#### 🔗 [Посилання на проект](https://github.com/Pavlij-S/Practice_OOP_PavlijS/tree/master/src/Task3)
+#### 📝 
