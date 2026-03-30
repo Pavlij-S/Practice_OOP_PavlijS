@@ -8,3 +8,4 @@
 5. Інтерфейс фабрики (`ResultFactory`) та конкретна реалізація (`TextResultFactory`).
    
 ## Результат виконання
+![img.png](img.png)
