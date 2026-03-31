@@ -1,5 +1,7 @@
 package Task3;
 
+import Task4.ViewTable;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -14,7 +16,7 @@ public class Main {
     }
 
     /** Запускає консольне меню для взаємодії з користувачем. */
-    private void menu() throws IOException {
+    protected void menu() throws IOException {
         String s = null;
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
         do {
@@ -66,7 +68,7 @@ public class Main {
     /** Точка входу в програму. */
     public static void main(String[] args) throws IOException {
         Viewable viewable = new ViewableResult();
-        View view = new ViewResult();
+        View view = new ViewTable();
         Main main = new Main(view);
         main.menu();
     }

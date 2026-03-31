@@ -5,7 +5,7 @@ import Task2.Item2d;
 import java.io.*;
 import java.util.ArrayList;
 
-public class ViewResult implements View {
+public abstract class ViewResult implements View {
     /** Назва файлу для серіалізації колекції. */
     private static final String FNAME = "items.bin";
 
@@ -79,6 +79,10 @@ public class ViewResult implements View {
     public void viewHeader() {
         System.out.println("Results:");
     }
+
+    public abstract void init(double stepX);
+
+    public abstract void ViewHeader();
 
     @Override
     public void viewBody() {
