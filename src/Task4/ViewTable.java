@@ -1,62 +1,89 @@
 package Task4;
 
-import java.util.Formatter;
 import Task2.Item2d;
 import Task3.ViewResult;
 
-public class ViewTable extends ViewResult{
+/**
+ * Клас для табличного відображення списку результатів.
+ */
+public class ViewTable extends ViewResult {
+    /** Стандартна ширина таблиці. */
     private static final int DEFAULT_WIDTH = 20;
+
+    /** Поточна ширина форматування таблиці. */
     private int width;
-    public ViewTable(){
+
+    /** Створює таблицю зі стандартною шириною. */
+    public ViewTable() {
         width = DEFAULT_WIDTH;
     }
-    public ViewTable(int width, int n){
+
+    /** Створює таблицю із заданою шириною та кількістю елементів. */
+    public ViewTable(int width, int n) {
         super(n);
         this.width = width;
     }
-    public int setWidth(){
+
+    /** Повертає поточну ширину таблиці. */
+    public int setWidth() {
         return width;
     }
-    private void outLineLn(){
+
+    /** Виводить розділювальну лінію таблиці. */
+    private void outLineLn() {
         System.out.println("--------------------");
     }
-    private void outHeader(){
+
+    /** Виводить заголовок таблиці. */
+    private void outHeader() {
         System.out.printf("%-10s | %-10s\n", "x", "y");
     }
 
-    private void outBody(){
-        for(Item2d item : getItems()){
+    /** Виводить усі рядки таблиці на основі поточної колекції. */
+    private void outBody() {
+        for (Item2d item : getItems()) {
             System.out.printf("%-10d | %-10d%n", item.getNumber(), item.getResult());
         }
     }
-    public  final void setWidth (int width){
+
+    /** Встановлює нову ширину та перевизначає дані таблиці. */
+    public final void setWidth(int width) {
         this.width = width;
         viewInit();
     }
-    public final void init(int width, double stepX){
+
+    /** Ініціалізує таблицю з указаною шириною та кроком по осі X. */
+    public final void init(int width, double stepX) {
         this.width = width;
         init(stepX);
     }
 
+    /** Формує колекцію значень з однаковим кроком. */
     @Override
-    public void init(double stepX){
+    public void init(double stepX) {
         getItems().clear();
         for (int i = 0; i < 5; i++) {
-            int number = (int)(i * stepX);
-            super.init(number); // виклик базового init(int n)
+            int number = (int) (i * stepX);
+            super.init(number); // Виклик базового методу для додавання одного елемента.
         }
     }
+
+    /** Виводить заголовок таблиці разом із розділювачем. */
     @Override
-    public void ViewHeader(){
+    public void ViewHeader() {
         outHeader();
         outLineLn();
     }
+
+    /** Виводить основну частину таблиці. */
     @Override
-    public void viewBody(){
+    public void viewBody() {
         outBody();
     }
+
+    /** Виводить завершальну лінію таблиці. */
     @Override
-    public void viewFooter(){
+    public void viewFooter() {
         outLineLn();
     }
 }
