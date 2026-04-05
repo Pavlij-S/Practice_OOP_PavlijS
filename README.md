@@ -25,5 +25,9 @@
 ---
 ### ✨ Завдання 4 (26.03.26)
 #### 🔗 [Посилання на проект](https://github.com/Pavlij-S/Practice_OOP_PavlijS/tree/master/src/Task4)
-#### 📝 Перевизначення, перевантаження та поліморфізм у Java
+#### 📝 Перевизначення, перевантаження та поліморфізм у Java.
+---
+### ✨ Завдання 5 (27.03.26)
+#### 🔗 [Посилання на проект](https://github.com/Pavlij-S/Practice_OOP_PavlijS/tree/master/src/Task5)
+#### 📝 Практичне застосування шаблонів проектування (Command, Singleton).
 ---
