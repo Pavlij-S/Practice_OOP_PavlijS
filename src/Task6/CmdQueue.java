@@ -35,20 +35,21 @@ public class CmdQueue implements Queue {
     }
 
     @Override
-    public Command take() {
-        if (tasks.isEmpty()) {
-            synchronized (this) {
-                waiting = true;
-                try {
-                    // Чекаємо, доки до черги не буде додано нову команду.
-                    wait();
-                } catch (InterruptedException ie) {
-                    waiting = false;
-                }
+    public synchronized Command take() {
+        while (tasks.isEmpty()) {
+            waiting = true;
+            try {
+                // Чекаємо, доки до черги не буде додано нову команду
+                wait();
+            } catch (InterruptedException ie) {
+                waiting = false;
+                return null; // або кинути виняток
             }
         }
+        waiting = false;
         return tasks.remove(0);
     }
+
 
     private class Worker implements Runnable {
         @Override
