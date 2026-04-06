@@ -13,6 +13,7 @@ public class Main {
     private View view = new ViewableResult().getView();
     private Menu menu = new Menu();
     public void run(){
+        // Додаємо стандартні дії та пункт запуску паралельних обчислень.
         menu.add(new ViewConsoleCommand(view));
         menu.add(new GenerateConsoleCommand(view));
         menu.add(new ChangeConsoleCommand(view));

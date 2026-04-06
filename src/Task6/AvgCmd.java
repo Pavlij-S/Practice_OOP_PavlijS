@@ -38,6 +38,7 @@ public class AvgCmd implements Command {
         int idx = 0, size = viewResult.getItems().size();
 
         for (Item2d item : viewResult.getItems()) {
+            // Накопичуємо суму обчислених значень усіх елементів.
             result += item.getResult();
             idx++;
             progress = idx * 100 / size;
@@ -53,6 +54,7 @@ public class AvgCmd implements Command {
             }
         }
 
+        // Ділимо суму на кількість елементів і отримуємо середнє.
         result /= size;
         System.out.println("Average done. Result = " + String.format("%.2f", result));
         progress = 100;

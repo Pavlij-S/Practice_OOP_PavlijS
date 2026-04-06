@@ -30,6 +30,7 @@ public class MaxCmd implements Command{
         int size = viewResult.getItems().size();
         result = 0;
         for (int idx = 1; idx < size; idx++) {
+            // Зберігаємо індекс елемента з найбільшим значенням result.
             if (viewResult.getItems().get(result).getResult() <
                     viewResult.getItems().get(idx).getResult()) {
                 result = idx;

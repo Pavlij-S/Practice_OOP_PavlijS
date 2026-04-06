@@ -6,8 +6,9 @@ import Task3.ViewResult;
 import Task5.Command;
 
 public class MinMaxCmd implements Command {
-    private int resultMin = -1; // індекс мінімального позитивного
-    private int resultMax = -1; // індекс максимального негативного
+    // Індекси елементів з мінімальним і максимальним значенням number.
+    private int resultMin = -1;
+    private int resultMax = -1;
     private int progress = 0;
     private ViewResult viewResult;
 
@@ -31,7 +32,7 @@ public class MinMaxCmd implements Command {
         return resultMax;
     }
 
-    /** Метод для перевірки, чи команда ще виконується */
+    // Повертає true, доки команда ще не завершила обробку даних.
     public boolean running() {
         return progress < 100;
     }
@@ -43,14 +44,15 @@ public class MinMaxCmd implements Command {
         int idx = 0, size = viewResult.getItems().size();
 
         for (Item2d item : viewResult.getItems()) {
-            int value = item.getNumber(); // тепер працюємо з першим стовпцем
+            // Порівняння виконується за початковим числовим полем елемента.
+            int value = item.getNumber();
 
-            // шукаємо мінімальне
+            // Якщо знайшли менше значення, оновлюємо індекс мінімуму.
             if (resultMin == -1 || value < viewResult.getItems().get(resultMin).getNumber()) {
                 resultMin = idx;
             }
 
-            // шукаємо максимальне
+            // Якщо знайшли більше значення, оновлюємо індекс максимуму.
             if (resultMax == -1 || value > viewResult.getItems().get(resultMax).getNumber()) {
                 resultMax = idx;
             }
